@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Destination WishList</title>
+    
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid ">
+        <div class="container text-center">
+          <h1 class="display-4">Vacation Destination WishList</h1>
+          <p class="lead">Found exciting places to visit on your next vacation? Use the form below to add them to your wishlist</p>
+        </div>
+      </div>
+    
+
+    <div class="container">
+        <!-- 
+            col = column ; md = breakpoint ; 
+         -->
+         <div class="row">
+        <div class="col-md-3">
+            <form id="destinations-form">
+                <div class="form-group">
+                  <label for="destination">Destination name</label>
+                  <input type="text" class="form-control" name="destination" id="destination" placeholder="Enter the name of the destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" name="location" id="location" placeholder="Where is it located?" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="photo">Photo</label>
+                    <input type="text" class="form-control" name="photo" id="photo" placeholder="Enter an image url of the place">
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea type="text" class="form-control" name="description" rows="3" id="description" placeholder="Where is it located?"></textarea>
+                  </div>
+                <button type="submit" class="btn btn-primary submit_btn btn-block">Add to list</button>
+              </form>
+        </div>
+
+        <div class="col-md-9">
+            <h4 id="title" class="text-center">Enter destination details</h4>
+            <div id="destination-container"></div>
+        </div>
+    </div>
+    </div>
+        <!-- JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
