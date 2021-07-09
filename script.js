@@ -18,10 +18,9 @@ form.addEventListener('submit', (event) => {
     let URL = "https://api.unsplash.com/search/photos/?client_id=" + clientId + "&query=" + event.target.destination.value;
     
     fetch(URL)
-    .then(function(data) {
-        return data.json();
-    })
-    .then(function(data) {
+        .then(response => 
+            response.json())
+        .then(data => {
         var newCard = document.createElement("div");
         newCard.setAttribute("class", "card");
         newCard.setAttribute("style", "width: 18rem;")
@@ -107,13 +106,10 @@ function editCard(buttonObject) {
     document.getElementsByClassName("card-title")[parseInt(buttonObject.value)].innerHTML = new_destination;
 
     fetch(URL)
-    .then(function(data) {
-        return data.json();
-    })
-    .then(function(data) {
+    .then(response => response.json()
+    .then(data => {
         let photo_url = data.results[0].urls.regular
         document.getElementsByClassName("card-img-top")[parseInt(buttonObject.value)].setAttribute("src", photo_url);
         document.getElementsByClassName("card-img-top")[parseInt(buttonObject.value)].setAttribute("alt", new_destination);
-    })
-
+    }));
 }
